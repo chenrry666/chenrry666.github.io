@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords"><meta name="author" content="Chenrry"><meta name="description" content="My own blog."><title>Blog 建站</title><link rel="apple-touch-icon" href="/images/favicon.png"><link rel="icon" href="/images/favicon.png"><link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet"><script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+<script src="/js/fancybox.js"></script>
+
+<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="/css/prism.css">
+<meta name="description" content="About the theme 在 Github 上逛的时候发现了一个非常简洁的主题 leedom 自己在他的基础上修改了一下，把 ejs 重构到 pug（原jade） 因为比较方便  增加了 giscus 评论 重构代码，把 posts, tags, archive 页的代码解耦，提取公共 layout.pug 增加了 category 分类页面 兼容 hexo-generator-categ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog 建站">
+<meta property="og:url" content="https://chenrry666.github.io/642ce18d">
+<meta property="og:site_name" content="Chenrry&#39;s Blog">
+<meta property="og:description" content="About the theme 在 Github 上逛的时候发现了一个非常简洁的主题 leedom 自己在他的基础上修改了一下，把 ejs 重构到 pug（原jade） 因为比较方便  增加了 giscus 评论 重构代码，把 posts, tags, archive 页的代码解耦，提取公共 layout.pug 增加了 category 分类页面 兼容 hexo-generator-categ">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-05T02:48:45.000Z">
+<meta property="article:modified_time" content="2023-04-05T06:44:39.935Z">
+<meta property="article:author" content="Chenrry">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary"><link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.4/katex.min.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Chenrry's Blog" type="application/atom+xml">
+</head><body><div id="app"><div class="header"><a href="/">Chenrry666</a></div><p class="links"><a title="categories" href="/categories/"><i class="iconfont icon-bookmark"></i></a><a title="archives" href="/archives/"><i class="iconfont icon-updatetime"></i></a><a title="github" target="_blank" href="https://github.com/chenrry666"><i class="iconfont icon-github"></i></a><a title="email" href="mailto:chengruichen3@gmail.com"><i class="iconfont icon-envelope"></i></a><a title="rss" target="_blank" href="/atom.xml"><i class="iconfont icon-rss"></i></a></p><div class="main"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><div class="post"><h3 class="date">Apr 05, 2023</h3><h1>Blog 建站</h1><div class="content markdown-body"><h2 id="about-the-theme"><a class="markdownIt-Anchor" href="#about-the-theme"></a> About the theme</h2>
+<p>在 Github 上逛的时候发现了一个非常简洁的主题 <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">leedom</a> 自己在他的基础上修改了一下，把 ejs 重构到 pug（原jade） <s>因为比较方便</s></p>
+<ul>
+<li>增加了 giscus 评论</li>
+<li>重构代码，把 posts, tags, archive 页的代码解耦，提取公共 layout.pug</li>
+<li>增加了 category 分类页面</li>
+<li>兼容 <code>hexo-generator-category-enhance</code>, 无需手动创建 category 页面</li>
+</ul>
+<p>修改后放在 Github, 取名叫 <a target="_blank" rel="noopener" href="https://github.com/chenrry666/leek">leek</a> 😄</p>
+<h2 id="about-hexo"><a class="markdownIt-Anchor" href="#about-hexo"></a> About hexo</h2>
+<ul>
+<li>使用 <code>hexo-filter-fenced-code</code> 增强 markdown 语法</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% codeblock lang:cpp %&#125;
+<span class="token title important"><span class="token punctuation">#</span>include &lt;iostream></span>
+int main()&#123;
+    std::cout &lt;&lt; "hello" &lt;&lt; std::endl;
+    return 0;
+&#125;
+&#123;% endcodeblock %&#125;
+等同于
+<span class="token code"><span class="token punctuation">```</span><span class="token code-language">codeblock lang:cpp</span>
+<span class="token code-block language-codeblock">#include &lt;iostream>
+int main()&#123;
+    std::cout &lt;&lt; "hello" &lt;&lt; std::endl;
+    return 0;
+&#125;
+</span>
+<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用 <code>hexo-renderer-markdown-it-plus</code>
+<ul>
+<li>
+<p>支持下标 <code>H~2~O</code> H<sub>2</sub>O</p>
+</li>
+<li>
+<p>上标 <code>x^2^</code> x<sup>2</sup></p>
+</li>
+<li>
+<p>下划线 <code>++Inserted++</code> <ins>Inserted</ins></p>
+</li>
+<li>
+<p>删除线 <code>~~Del~~</code> <s>Del</s></p>
+</li>
+<li>
+<p>标记高亮 <code>==marked==</code> <mark>marked</mark></p>
+</li>
+<li>
+<p>支持数学公式</p>
+  <pre class="line-numbers language-none"><code class="language-none">$$
+  a,b \in R^&#123;+&#125;
+  \Rightarrow \frac&#123;a+b&#125;&#123;2&#125;\ge \sqrt&#123;ab&#125; 
+$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>∈</mo><msup><mi>R</mi><mo>+</mo></msup><mo>⇒</mo><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mn>2</mn></mfrac><mo>≥</mo><msqrt><mrow><mi>a</mi><mi>b</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">  a,b \in R^{+} 
+  \Rightarrow \frac{a+b}{2}\ge \sqrt{ab}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.821331em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.058904999999999985em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.981095em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span></span></span><span style="top:-2.941095em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.058904999999999985em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>缩写</p>
+   <pre class="line-numbers language-none"><code class="language-none">*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+The HTML specification
+is maintained by the W3C.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification<br />
+is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+</li>
+<li>
+<p>脚注</p>
+  <pre class="line-numbers language-none"><code class="language-none">Here is a footnote reference,[^1] and another.[^longnote]
+[^1]: Here is the footnote.
+[^longnote]: Here&#39;s one with multiple blocks.
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+Here is an inline note.^[Inlines notes are easier to write, since
+you don&#39;t have to pick an identifier and move down to type the
+note.]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<p>Here is an inline note.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Here is the footnote. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Here’s one with multiple blocks.<br />
+Subsequent paragraphs are indented to show that they<br />
+belong to the previous footnote. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Inlines notes are easier to write, since<br />
+you don’t have to pick an identifier and move down to type the<br />
+note. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div><a class="blog-nav" id="older" href="/642c5f8a">OLDER ></a><a class="blog-nav" id="newer" href="/642d462d">< NEWER</a></div><script src="https://giscus.app/client.js" data-repo="chenrry666/chenrry666.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNTcyMTgwNDU=" data-category="General" data-category-id="DIC_kwDOD1TV_c4CViaw" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script><div class="giscus"></div><div class="footer"><div class="footer-more"><a target="_blank" rel="noopener" href="https://github.com/chenrry666">Copyright © Chenrry666 2022</a></div><div class="footer-more"><a target="_blank" rel="noopener" href="https://github.com/chenrry666/leek">Theme by Leek | Powered by Hexo</a></div></div></div><div class="back-to-top hidden"><a href="javascript: void(0)"><i class="iconfont icon-chevronup"></i></a></div>
+<script src="/js/backtotop.js"></script>
+<div class="search-icon" id="search-icon"><a href="javascript: void(0)"><i class="iconfont icon-search"></i></a></div><div class="search-overlay hidden"><div class="search-content" tabindex="0"><div class="search-box"><div class="search-title"><!-- span.search-icon-input
+	a(href="javascript: void(0)")
+		i.iconfont.icon-search--><input class="search-input" id="search-input" type="text" placeholder="$grep ..."><span class="search-close-icon" id="search-close-icon"><a href="javascript: void(0)"><i class="iconfont icon-close"></i></a></span></div><div class="search-result" id="search-result"></div></div></div></div><script>var inputArea = document.querySelector("#search-input")
+var searchOverlayArea = document.querySelector(".search-overlay")
+
+// inputArea.onclick = function() {
+//	 getSearchFile()
+//	 this.onclick = null
+// }
+
+inputArea.onkeydown = function() {
+	if(event.keyCode == 13)
+		return false
+}
+
+function openOrHideSearchContent() {
+	let isHidden = searchOverlayArea.classList.contains('hidden')
+	if (isHidden) {
+		searchOverlayArea.classList.remove('hidden')
+		document.body.classList.add('hidden')
+		inputArea.focus()
+		getSearchFile()
+	} else {
+		searchOverlayArea.classList.add('hidden')
+		document.body.classList.remove('hidden')
+	}
+}
+
+function blurSearchContent(e) {
+	if (e.target === searchOverlayArea) {
+		openOrHideSearchContent()
+	}
+}
+
+document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+var searchFunc = function (path, search_id, content_id) {
+	'use strict';
+	var $input = document.getElementById(search_id);
+	var $resultContent = document.getElementById(content_id);
+	$resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+	// $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+	$.ajax({
+		// 0x01. load xml file
+		url: path,
+		dataType: "xml",
+		success: function (xmlResponse) {
+			// 0x02. parse xml file
+			var datas = $("entry", xmlResponse).map(function () {
+				return {
+					title: $("title", this).text(),
+					content: $("content", this).text(),
+					url: $("url", this).text()
+				};
+			}).get();
+			$resultContent.innerHTML = "";
+
+			$input.addEventListener('input', function () {
+				// 0x03. parse query to keywords list
+				var str = '<ul class=\"search-result-list\">';
+				var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+				$resultContent.innerHTML = "";
+				if (this.value.trim().length <= 0) {
+					return;
+				}
+				// 0x04. perform local searching
+				datas.forEach(function (data) {
+					var isMatch = true;
+					var content_index = [];
+					if (!data.title || data.title.trim() === '') {
+						data.title = "Untitled";
+					}
+					var orig_data_title = data.title.trim();
+					var data_title = orig_data_title.toLowerCase();
+					var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+					var data_content = orig_data_content.toLowerCase();
+					var data_url = data.url;
+					var index_title = -1;
+					var index_content = -1;
+					var first_occur = -1;
+					// only match artiles with not empty contents
+					if (data_content !== '') {
+						keywords.forEach(function (keyword, i) {
+							index_title = data_title.indexOf(keyword);
+							index_content = data_content.indexOf(keyword);
+
+							if (index_title < 0 && index_content < 0) {
+								isMatch = false;
+							} else {
+								if (index_content < 0) {
+									index_content = 0;
+								}
+								if (i == 0) {
+									first_occur = index_content;
+								}
+								// content_index.push({index_content:index_content, keyword_len:keyword_len});
+							}
+						});
+					} else {
+						isMatch = false;
+					}
+					// 0x05. show search results
+					if (isMatch) {
+						str += "<li><a href='" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+						var content = orig_data_content;
+						if (first_occur >= 0) {
+							// cut out 100 characters
+							var start = first_occur - 20;
+							var end = first_occur + 80;
+
+							if (start < 0) {
+								start = 0;
+							}
+
+							if (start == 0) {
+								end = 100;
+							}
+
+							if (end > content.length) {
+								end = content.length;
+							}
+
+							var match_content = content.substr(start, end);
+
+							// highlight all keywords
+							keywords.forEach(function (keyword) {
+								var regS = new RegExp(keyword, "gi");
+								match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+							});
+
+							str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+						}
+						str += "<hr></li>";
+					}
+				});
+				str += "</ul>";
+				if (str.indexOf('<li>') === -1) {
+					return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+				}
+				$resultContent.innerHTML = str;
+			});
+		},
+		error: function(xhr, status, error) {
+			$resultContent.innerHTML = ""
+			if (xhr.status === 404) {
+				$resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+			} else {
+				$resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+			}
+		}
+	});
+	$(document).on('click', '#search-close-icon', function() {
+		$('#search-input').val('');
+		$('#search-result').html('');
+	});
+}
+
+var getSearchFile = function() {
+		var path = "/search.xml";
+		searchFunc(path, 'search-input', 'search-result');
+}
+</script></div></body></html>

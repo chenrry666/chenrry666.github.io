@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Pure Blog</title>
+  <title>Chenrry&#39;s Blog</title>
   
   
-  <link href="http://localhost:4000/atom.xml" rel="self"/>
+  <link href="https://chenrry666.github.io/atom.xml" rel="self"/>
   
-  <link href="http://localhost:4000/"/>
-  <updated>2023-02-25T13:45:34.275Z</updated>
-  <id>http://localhost:4000/</id>
+  <link href="https://chenrry666.github.io/"/>
+  <updated>2023-04-05T09:50:09.624Z</updated>
+  <id>https://chenrry666.github.io/</id>
   
   <author>
     <name>Chenrry</name>
@@ -17,22 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Markdown Test</title>
+    <link href="https://chenrry666.github.io/642d462d"/>
+    <id>https://chenrry666.github.io/642d462d</id>
+    <published>2023-04-05T09:58:05.000Z</published>
+    <updated>2023-04-05T09:50:09.624Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Some test case from &lt;code&gt;leanote&lt;/code&gt;.&lt;br /&gt;
+Thanks a lot:P&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Test" scheme="https://chenrry666.github.io/categories/Test/"/>
+    
+    
+    <category term="Hexo" scheme="https://chenrry666.github.io/tags/Hexo/"/>
+    
+    <category term="Test" scheme="https://chenrry666.github.io/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog 建站</title>
+    <link href="https://chenrry666.github.io/642ce18d"/>
+    <id>https://chenrry666.github.io/642ce18d</id>
+    <published>2023-04-05T02:48:45.000Z</published>
+    <updated>2023-04-05T06:44:39.935Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;about-the-theme&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#about-the-theme&quot;&gt;&lt;/a&gt; About the theme&lt;/h2&gt;
+&lt;p&gt;在 Github 上逛的时候发现了一个非常简洁的主题 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Blog" scheme="https://chenrry666.github.io/categories/Blog/"/>
+    
+    
+    <category term="Blog" scheme="https://chenrry666.github.io/tags/Blog/"/>
+    
+    <category term="Hexo" scheme="https://chenrry666.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://localhost:4000/2023/02/25/hello-world/"/>
-    <id>http://localhost:4000/2023/02/25/hello-world/</id>
-    <published>2023-02-25T13:45:34.275Z</published>
-    <updated>2023-02-25T13:45:34.275Z</updated>
+    <link href="https://chenrry666.github.io/642c5f8a"/>
+    <id>https://chenrry666.github.io/642c5f8a</id>
+    <published>2023-04-04T17:34:02.169Z</published>
+    <updated>2023-04-04T17:34:02.169Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
+    
+    <category term="Blog" scheme="https://chenrry666.github.io/categories/Blog/"/>
     
     
   </entry>
