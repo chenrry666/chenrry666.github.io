@@ -6,7 +6,7 @@
   <link href="https://chenrry666.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenrry666.github.io/"/>
-  <updated>2023-04-05T09:50:09.624Z</updated>
+  <updated>2023-04-09T06:07:22.342Z</updated>
   <id>https://chenrry666.github.io/</id>
   
   <author>
@@ -17,9 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Microblog</title>
+    <link href="https://chenrry666.github.io/64324dbd/"/>
+    <id>https://chenrry666.github.io/64324dbd/</id>
+    <published>2023-04-09T05:31:41.000Z</published>
+    <updated>2023-04-09T06:07:22.342Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;👋 你好，欢迎来到这个页面，这是一篇类似于QQ空间的文章，我会将它当作碎片写作的投递处，毕竟长篇大论需要时间。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div class=&#39;date&#39;&gt;13:37 Apr 9, 2023&lt;/div&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Blog" scheme="https://chenrry666.github.io/categories/Blog/"/>
+    
+    <category term="MicroBlog" scheme="https://chenrry666.github.io/categories/Blog/MicroBlog/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Markdown Test</title>
-    <link href="https://chenrry666.github.io/642d462d"/>
-    <id>https://chenrry666.github.io/642d462d</id>
+    <link href="https://chenrry666.github.io/642d462d/"/>
+    <id>https://chenrry666.github.io/642d462d/</id>
     <published>2023-04-05T09:58:05.000Z</published>
     <updated>2023-04-05T09:50:09.624Z</updated>
     
@@ -40,10 +68,10 @@ Thanks a lot:P&lt;/p&gt;</summary>
   
   <entry>
     <title>Blog 建站</title>
-    <link href="https://chenrry666.github.io/642ce18d"/>
-    <id>https://chenrry666.github.io/642ce18d</id>
+    <link href="https://chenrry666.github.io/642ce18d/"/>
+    <id>https://chenrry666.github.io/642ce18d/</id>
     <published>2023-04-05T02:48:45.000Z</published>
-    <updated>2023-04-05T06:44:39.935Z</updated>
+    <updated>2023-04-08T18:53:34.375Z</updated>
     
     
       
@@ -68,8 +96,8 @@ Thanks a lot:P&lt;/p&gt;</summary>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://chenrry666.github.io/642c5f8a"/>
-    <id>https://chenrry666.github.io/642c5f8a</id>
+    <link href="https://chenrry666.github.io/642c5f8a/"/>
+    <id>https://chenrry666.github.io/642c5f8a/</id>
     <published>2023-04-04T17:34:02.169Z</published>
     <updated>2023-04-04T17:34:02.169Z</updated>
     
